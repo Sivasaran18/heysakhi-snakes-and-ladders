@@ -4,27 +4,22 @@
     "slug": "heysakhi-snakes-and-ladders",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
-    "splash": {
-      "resizeMode": "contain",
-      "backgroundColor": "#FAF5FF"
-    },
+    "newArchEnabled": false,
     "ios": {
       "supportsTablet": true
     },
     "android": {
-      "adaptiveIcon": {
-        "backgroundColor": "#FAF5FF"
-      },
       "package": "com.heysakhi.snakesandladders",
-      "versionCode": 1,
-      "permissions": ["INTERNET"]
+      "permissions": [
+        "INTERNET"
+      ]
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
+    "extra": {
+      "eas": {
+        "projectId": "895c4cfc-d4f9-49d2-a6fe-12d2f79aec2b"
+      }
+    },
+    "owner": "sivasaran"
   }
 }
-
