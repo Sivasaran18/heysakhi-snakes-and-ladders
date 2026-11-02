@@ -354,3 +354,4 @@ module.exports = async function handler(req, res) {
 
   return sendJson(res, 404, { error: 'Action not supported' });
 };
+
