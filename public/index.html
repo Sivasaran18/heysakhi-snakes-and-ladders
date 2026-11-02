@@ -122,6 +122,38 @@
     .btn-ready { background: #059669; color: #FFFFFF; }
     .btn:disabled { opacity: 0.45; cursor: not-allowed; }
 
+    /* Game Top Header Bar */
+    .game-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #334155;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      transition: all 0.2s;
+    }
+    .back-btn:hover {
+      background: #F8FAFC;
+      border-color: #94A3B8;
+      transform: translateY(-1px);
+    }
+    .back-btn:active {
+      transform: translateY(0);
+    }
+
     /* Player Status Bar */
     .player-bar {
       display: flex;
@@ -399,6 +431,9 @@
 
     <!-- Waiting Room View -->
     <div id="view-waiting" class="card" style="display: none; text-align: center;">
+      <div style="display: flex; justify-content: flex-start; margin-bottom: 8px;">
+        <button class="back-btn" onclick="exitGame()">← Back</button>
+      </div>
       <div style="font-size: 11px; font-weight: 800; color: #4F46E5; letter-spacing: 1px;">ROOM CODE</div>
       <div id="lobby-code" style="font-size: 32px; font-weight: 900; letter-spacing: 4px; margin: 6px 0 10px 0; color: #1E293B;">------</div>
       <button class="btn btn-secondary" style="margin-bottom: 16px; padding: 8px;" onclick="copyRoomCode()">📋 Copy Code</button>
@@ -411,6 +446,10 @@
 
     <!-- Game View -->
     <div id="view-game" style="display: none; width: 100%; flex-direction: column; align-items: center;">
+      <div class="game-top-bar">
+        <button class="back-btn" onclick="exitGame()">← Back to Menu</button>
+        <span id="game-mode-tag" style="font-size: 11px; font-weight: 700; color: #64748B; background: #E2E8F0; padding: 4px 8px; border-radius: 6px;">Pass & Play</span>
+      </div>
       <div class="player-bar" id="game-player-bar"></div>
       <div class="turn-banner" id="game-turn-banner">Current Turn</div>
 
@@ -858,6 +897,10 @@
       document.getElementById('view-mode').style.display = 'none';
       document.getElementById('view-waiting').style.display = 'none';
       document.getElementById('view-game').style.display = 'flex';
+      const modeTag = document.getElementById('game-mode-tag');
+      if (modeTag) {
+        modeTag.innerText = isOnlineMode ? `Online • Room ${currentRoomCode}` : 'Pass & Play';
+      }
       initBoardUI();
       updateGameUI();
     }
