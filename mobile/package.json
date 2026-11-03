@@ -1,26 +1,19 @@
 {
-  "name": "heysakhi-snakes-and-ladders",
+  "name": "clean-app",
   "version": "1.0.0",
   "main": "index.js",
+  "dependencies": {
+    "expo": "~58.0.22",
+    "expo-status-bar": "~58.0.4",
+    "react": "19.3.0",
+    "react-native": "0.88.1",
+    "react-native-webview": "14.0.1"
+  },
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web"
-  },
-  "dependencies": {
-    "expo": "~52.0.0",
-    "expo-asset": "^11.0.4",
-    "expo-status-bar": "^2.0.1",
-    "react": "18.3.1",
-    "react-native": "0.76.5",
-    "react-native-webview": "^13.12.5"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.20.0",
-    "@types/react": "~18.3.12",
-    "babel-preset-expo": "~12.0.0",
-    "typescript": "^5.3.3"
   },
   "private": true
 }
